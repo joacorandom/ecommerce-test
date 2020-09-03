@@ -1,0 +1,8 @@
+{
+  "extends": ["plugin:mocha/recommended"],
+  "plugins": ["mocha"],
+  "rules": {
+    "func-names": "off",
+    "no-undef": "off"
+  }
+}
