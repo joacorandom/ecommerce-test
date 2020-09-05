@@ -2,9 +2,13 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const { middleware } = require('common-errors');
 const morgan = require('morgan');
-require('dotenv').config();
+const dotenv = require('dotenv');
 
-const router = require('./src/config/routes');
+if (process.env.NODE_ENV !== 'production') {
+  dotenv.config();
+}
+
+const router = require('./config/routes');
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
